@@ -15,6 +15,7 @@ public class Mapper extends Query {
 
     public <T> List<T> listWithLastId(T t, Number lastId, int ps) {
         try {
+
             Term example = Term.select(t);
             if (lastId != null && lastId.longValue() != 0) {
                 example.andLessThan("id", lastId);
